@@ -4885,19 +4885,19 @@ function bot_ui_ini() {
   botui.message
     .add({
       delay: 800,
-      content: "Hi, there👋",
+      content: "Hi, 你好呀👋",
     })
     .then(function () {
       botui.message
         .add({
           delay: 1100,
-          content: "这里是 Mashiro",
+          content: "这里是 佑砢君",
         })
         .then(function () {
           botui.message
             .add({
               delay: 1100,
-              content: "一个可爱的蓝孩子~",
+              content: "一个有亿点可爱的蓝孩子~",
             })
             .then(function () {
               botui.action
@@ -4925,7 +4925,7 @@ function bot_ui_ini() {
       botui.message
         .add({
           delay: 600,
-          content: "😘",
+          content: "😁",
         })
         .then(function () {
           secondpart();
@@ -4954,7 +4954,7 @@ function bot_ui_ini() {
               botui.message
                 .add({
                   delay: 1200,
-                  content: "因为数据分析也需要Coder嘛",
+                  content: "毕竟也是工科嘛，再说电商也是要码农的呀",
                 })
                 .then(function () {
                   botui.message
@@ -4982,7 +4982,7 @@ function bot_ui_ini() {
                                   delay: 1100,
                                   action: [
                                     {
-                                      text: "为什么叫Mashiro呢？ 🤔",
+                                      text: "为什么叫佑砢君呢？ 🤔",
                                       value: "why-mashiro",
                                     },
                                   ],
@@ -5001,8 +5001,7 @@ function bot_ui_ini() {
       botui.message
         .add({
           delay: 1e3,
-          content:
-            "Mashiro以及站名都来自一部动画，因为和主角有一样的爱好~ 如果有兴趣可以找找首页上的视频~",
+          content: "这个是个小秘密，当你成为我的朋友时你会自己明白哒😏",
         })
         .then(function () {
           botui.action
@@ -5010,7 +5009,7 @@ function bot_ui_ini() {
               delay: 1500,
               action: [
                 {
-                  text: "为什么是白猫呢？ 🤔",
+                  text: "喜欢什么动物吗？ 🤔",
                   value: "why-cat",
                 },
               ],
@@ -5024,13 +5023,13 @@ function bot_ui_ini() {
       botui.message
         .add({
           delay: 1e3,
-          content: "因为对GitHub有种执念… ",
+          content: "喜欢猫🐱 喜欢狗🐶",
         })
         .then(function () {
           botui.message
             .add({
               delay: 1100,
-              content: "而且我真的是猫控！",
+              content: "只可惜家里不让养所以没养过😭",
             })
             .then(function () {
               botui.action
@@ -5058,7 +5057,7 @@ function bot_ui_ini() {
         .then(function () {
           botui.message.add({
             delay: 1600,
-            content: "那么，仔细看看我的博客吧？ ^_^",
+            content: "那么再多探索我的博客吧😋",
           });
         });
     };
