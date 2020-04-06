@@ -4942,7 +4942,7 @@ function bot_ui_ini() {
       botui.message
         .add({
           delay: 1500,
-          content: "目前就读于厦门华厦学院",
+          content: "现在还是个大学生",
         })
         .then(function () {
           botui.message
