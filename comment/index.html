@@ -332,7 +332,7 @@
   
     <div class="pattern-center ">
       <div class="pattern-attachment-img">
-        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="/images/comment/comment.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/nekochram/nekochram.github.io/images/comment/comment.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
       </div>
       <header class="pattern-header ">
         <h1 class="entry-title">
@@ -468,6 +468,36 @@
   </div><!-- .site-info -->
 </footer>
 
+<!--网站天数计数-->
+<span id="timeDate" style="display: block; text-align: center;">载入天数...</span><span id="times" style="display: block; text-align: center;">载入时分秒...</span><script>
+
+    var now = new Date();
+  
+    function createtime() {
+  
+      var grt= new Date("03/20/2020 22:33:00");//此处修改你的建站时间或者网站上线时间
+  
+      now.setTime(now.getTime()+250);
+  
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+  
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+  
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+  
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+  
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+  
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+  
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+  
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+  
+    }
+  
+    setInterval("createtime()",250);</script>
 
 
 <!-- <script src="/js/tocbot.js"></script> -->
@@ -543,6 +573,34 @@ $(document).ready(function() {
       </div>
     </div>
   </section>
+  <!--下两行为实现换肤功能-->
+  <div class="skin-menu no-select" id="mainskin" style="position: fixed">
+  <div class="theme-controls row-container">
+    <ul class="menu-list">
+      <li id="white-bg"><i class="fa fa-television" aria-hidden="true"></i></li>
+      <li id="sakura-bg"><i class="iconfont icon-sakura"></i></li>
+      <li id="gribs-bg"><i class="fa fa-slack" aria-hidden="true"></i></li>
+      <li id="KAdots-bg"><i class="iconfont icon-dots"></i></li>
+      <li id="totem-bg">
+        <i class="fa fa-optin-monster" aria-hidden="true"></i>
+      </li>
+      <li id="pixiv-bg"><i class="iconfont icon-pixiv"></i></li>
+      <li id="bing-bg"><i class="iconfont icon-bing"></i></li>
+      <li id="dark-bg"><i class="fa fa-moon-o" aria-hidden="true"></i></li>
+    </ul>
+  </div>
+</div>
+<canvas id="night-mode-cover"></canvas>
+ 
+  <div class="changeSkin-gear no-select">
+  <div class="keys" id="setbtn">
+    <span id="open-skinMenu">
+      切换主题 | SCHEME TOOL
+      <i class="iconfont icon-gear inline-block rotating"></i>
+    </span>
+  </div>
+</div>
+
   <div id="mo-nav" class="">
   <div class="m-avatar">
     <img src="https://cdn.jsdelivr.net/gh/nekochram/nekochram.github.io/images/index.jpg">
@@ -765,3 +823,6 @@ $(document).ready(function() {
 </script>
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script> <!-- 樱花特效 -->
+
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/noSomeKey.js"></script> <!--禁用了鼠标右键，可以开启禁用鼠标左键拖动选择文字-->
