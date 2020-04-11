@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-04-06T12:29:22.520Z</updated>
+  <updated>2020-04-11T12:03:22.286Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jsdelivr 免费 cdn 加速服务</title>
+    <link href="/2020/04/11/jsdelivr%E5%85%8D%E8%B4%B9cdn%E5%8A%A0%E9%80%9F%E6%9C%8D%E5%8A%A1/"/>
+    <id>/2020/04/11/jsdelivr免费cdn加速服务/</id>
+    <published>2020-04-11T11:48:40.000Z</published>
+    <updated>2020-04-11T12:03:22.286Z</updated>
+    
+    <summary type="html">
+    
+      免费 cdn 服务
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="-悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>实用网站推荐</title>
