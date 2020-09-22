@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-09-22T11:41:27.354Z</updated>
+  <updated>2020-09-22T12:04:10.491Z</updated>
   <id>/</id>
   
   <author>
@@ -21,11 +21,31 @@
     <link href="/2020/09/22/js%E5%AD%A6%E4%B9%A03/"/>
     <id>/2020/09/22/js学习3/</id>
     <published>2020-09-22T11:40:21.000Z</published>
-    <updated>2020-09-22T11:41:27.354Z</updated>
+    <updated>2020-09-22T12:04:10.491Z</updated>
     
     <summary type="html">
     
       js 基础语法第 3 期
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="-悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js 基础语法第 4 期</title>
+    <link href="/2020/09/22/js%E5%AD%A6%E4%B9%A04/"/>
+    <id>/2020/09/22/js学习4/</id>
+    <published>2020-09-22T11:40:21.000Z</published>
+    <updated>2020-09-22T12:04:06.069Z</updated>
+    
+    <summary type="html">
+    
+      js 基础语法第 4 期
     
     </summary>
     
