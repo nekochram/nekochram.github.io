@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-09-22T12:05:21.972Z</updated>
+  <updated>2020-09-22T12:10:20.153Z</updated>
   <id>/</id>
   
   <author>
@@ -17,15 +17,15 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>js 基础语法第 3 期</title>
-    <link href="/2020/09/22/js%E5%AD%A6%E4%B9%A03/"/>
-    <id>/2020/09/22/js学习3/</id>
+    <title>js 基础语法第 4 期</title>
+    <link href="/2020/09/22/js%E5%AD%A6%E4%B9%A04/"/>
+    <id>/2020/09/22/js学习4/</id>
     <published>2020-09-22T12:05:46.000Z</published>
-    <updated>2020-09-22T12:05:21.972Z</updated>
+    <updated>2020-09-22T12:10:20.153Z</updated>
     
     <summary type="html">
     
-      js 基础语法第 3 期
+      js 基础语法第 4 期
     
     </summary>
     
@@ -37,15 +37,15 @@
   </entry>
   
   <entry>
-    <title>js 基础语法第 4 期</title>
-    <link href="/2020/09/22/js%E5%AD%A6%E4%B9%A04/"/>
-    <id>/2020/09/22/js学习4/</id>
+    <title>js 基础语法第 3 期</title>
+    <link href="/2020/09/22/js%E5%AD%A6%E4%B9%A03/"/>
+    <id>/2020/09/22/js学习3/</id>
     <published>2020-09-22T11:40:21.000Z</published>
-    <updated>2020-09-22T12:04:06.069Z</updated>
+    <updated>2020-09-22T12:10:31.057Z</updated>
     
     <summary type="html">
     
-      js 基础语法第 4 期
+      js 基础语法第 3 期
     
     </summary>
     
