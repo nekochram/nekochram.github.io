@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2020-05-03T12:38:50.077Z</updated>
+  <updated>2020-09-22T11:04:06.857Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js 代码</title>
+    <link href="/2020/09/22/js%E5%AD%A6%E4%B9%A01/"/>
+    <id>/2020/09/22/js学习1/</id>
+    <published>2020-09-22T11:03:16.000Z</published>
+    <updated>2020-09-22T11:04:06.857Z</updated>
+    
+    <summary type="html">
+    
+      js 基础语法第 1 期
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="-悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>公司前端实战</title>
