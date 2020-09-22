@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">尽莉了</title>
+  <title itemprop="name">js 基础语法第 3 期 | 尽莉了</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -295,6 +295,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/nekochram/nekochram.github.io/images/blogphotos/js学习/3.jpeg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/nekochram/nekochram.github.io/images/blogphotos/js学习/3.jpeg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      js 基础语法第 3 期</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://nekochram.github.io">
+            <img src="https://cdn.jsdelivr.net/gh/nekochram/nekochram.github.io/images/index.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://nekochram.github.io">佑砢君</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-9-22<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -302,15 +326,640 @@
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-          <header class="entry-header">
-            <h1 class="entry-title"></h1>
-            <p class="entry-census">&nbsp;·&nbsp;2020-9-22&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
-        
         <div class="entry-content">
-          
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>从这期开始的代码都是 js 的新特性，只有部分新版本浏览器已经适配，在使用前请确保你的浏览器版本已经适配这些特性。</p>
+<h2 id="下面是代码"><a href="#下面是代码" class="headerlink" title="下面是代码"></a>下面是代码</h2><pre><code class="javascript">//p70 成员变量(这之后的语法都是新语法只有部分浏览器支持)
+//成员变量知指的是类里面定义的变量
+class Employee {
+  dept = &quot;&quot;;
+  constructor(name) {
+    this.name = &quot;员工姓名&quot; + name;
+  }
+}
+
+var emp = new Employee(&quot;佑砢&quot;);
+console.log(emp);
+emp.dept = &quot;技术部&quot;;
+console.log(emp);
+
+//p71 静态成员(限制作用域)
+console.clear();
+class Page {
+  static count = 0;
+  static increaseViewCount() {
+    Page.count++;
+  }
+}
+
+Page.count++;
+
+console.log(Page.count);
+Page.increaseViewCount();
+console.log(Page.count);
+
+//p72 字符串定义
+console.clear();
+var str = &quot;hello&quot;;
+console.log(str);
+
+var str2 = new String(&quot;你好&quot;);
+console.log(str2);
+
+//转义字符
+str = &#39;他说：&quot;我们出去玩吧&quot;&#39;; //转义本身就两个反斜杠，\n代表换行，\t代表tab键
+console.log(str);
+
+console.log(&quot;\u1010&quot;); //符号
+
+//p73 字符串遍历
+console.clear();
+for (let i = 0; i &lt; str.length; i++) {
+  console.log(str.charAt(i));
+}
+
+for (let c of str) {
+  console.log(c);
+}
+
+//p74 字符串裁切
+console.clear();
+//slice接受两个参数。一个开始一个结束，结果会包含开始的参数的内容而不包含结束的参数的内容
+var str = &quot;This is a long string......&quot;;
+console.log(str.slice(0, 4));
+console.log(str.slice(4)); //从第4位一直到结尾
+console.log(str.slice(0, -1));
+console.log(str.slice(-6, -1));
+console.log(str.slice(4, 1)); //开始大于结束默认返回空字符串
+//substring
+console.log(str.substring(0, 4));
+console.log(str.substring(4));
+console.log(str.substring(0, -1)); //sunstring不能接受负数，如果接收负数，或者不是数字的类型会变成接收0
+console.log(str.substring(-6, -1));
+console.log(str.substring(4, 1)); //开始大于结束会把两个值替换
+
+//p75 字符串拼接
+console.clear();
+var str1 = &quot;hello &quot;;
+var str2 = &quot;world!&quot;;
+console.log(str1 + str2);
+console.log(str1.concat(str2));
+
+//p76 大小写转换
+console.clear();
+console.log(str1.toUpperCase());
+console.log(&quot;WORLD&quot;.toLocaleLowerCase());
+
+//p77 去除空格
+console.clear();
+var str = &quot;   hello    world    &quot;;
+console.log(str.trim()); //能去除开头结尾空格不能去中间的空格
+
+//p78 模板字符串
+console.clear();
+var longStr = `dsfdsa s fdsaf dsaf 
+        dsf sdaf sda dsg fdg gfhzb 
+    vhxfgh fxgh fgjxg jnfgxhf 
+h fgh `;
+console.log(longStr);
+
+var name = &quot;佑砢&quot;;
+var str = `你好,${name}`;
+console.log(str);
+function greeting(strings, gender) {
+  let genderStr = &quot;&quot;;
+  if (gender === &quot;M&quot;) {
+    genderStr = &quot;先生&quot;;
+  } else if (gender === &quot;F&quot;) {
+    genderStr = &quot;女士&quot;;
+  }
+  return `${strings[0]}${genderStr}`;
+}
+var gender = &quot;M&quot;;
+var result = greeting`你好，佑砢${gender}`;
+console.log(result);
+
+//p79 正则表达式-创建正则表达式
+console.clear();
+var str = &quot;where when what&quot;;
+
+var re = /wh/g; //g代表全局搜索，可以不加，那么只会匹配一次
+var re2 = new RegExp(&quot;wh&quot;);
+
+console.log(re.exec(str));
+console.log(re.exec(str)); //会返回匹配的内容
+console.log(re.test(str)); //只会返回true，false，即有没有匹配到
+
+console.log(re2.exec(str));
+console.log(re2.test(str));
+
+//p80 正则-字符匹配
+console.clear();
+var str = `This str contains 123 CAPITALIZED letter and _-&amp;^% symbols`;
+
+console.log(/T/.test(str));
+console.log(/This/.test(str));
+console.log(/Thiss/.test(str));
+console.log(/12/.test(str));
+console.log(/1234/.test(str));
+console.log(/_-&amp;/.test(str));
+
+//p80 特殊字符匹配
+console.clear();
+console.log(str.match(/Th.s/g));
+console.log(str.match(/1.3/g));
+
+console.log(str.match(/\d/g));
+console.log(str.match(/\w/g));
+console.log(str.match(/\s/g));
+
+console.log(&quot;你好&quot;.match(/\u4f60/g));
+
+//p81 匹配次数
+console.clear();
+var str = `This str contains 123 CAPITALIZED letter and _-&amp;^% symbols`;
+console.log(str.match(/This.*/g)); //多次匹配
+console.log(str.match(/t+/g)); //匹配1次到多次，区分大小写的
+console.log(str.match(/x?/g)); //匹配0或1次
+console.log(str.match(/x?/g));
+
+console.log(str.match(/t{2}/g)); //精确判断出现次数
+console.log(str.match(/\d{1,2}/g)); //出现1至2次
+console.log(str.match(/\d{1,}/g)); //至少出现1次
+
+//p82 区间、逻辑和界定符
+console.clear();
+console.log(str.match(/[abc]/g));
+console.log(str.match(/[a-z]/g)); //代表匹配26个小写字母
+console.log(str.match(/[A-Z]/g)); //代表匹配26个大写字母
+
+console.log(str.match(/[^0-9]/g)); //代表匹配非0-9区间内的字符
+
+console.log(str.match(/[\-_&amp;\^]/g)); //  \用来转义
+
+console.log(str.match(/This|contains/g));
+
+var str = &quot;this that athisa and that&quot;;
+console.log(str.match(/^this/g)); //匹配开头的this
+console.log(str.match(/that$/g)); //匹配结尾的this
+
+console.log(str.match(/\bthat\b/g)); //表示只返回没有间隔的that
+
+//p83 分组
+console.clear();
+var str = `this that this and that`;
+console.log(/(th).*(th)/.exec(str)); //()内是要的数据
+
+var str = `aaaab abb cddaa`;
+console.log(str.match(/(aa){2}/g)); //出现两次的aa
+
+//p84 常见正则表达式
+console.clear();
+var mobileRe = /^1[3-9]\d{9}/g;
+console.log(mobileRe.test(&quot;138666666666&quot;));
+
+var emailRe = /(^[a-zA-Z0-9_\-\.]+)@([a-z-A-Z0-9_\-\.]+\.([a-zA-Z]{2,5}))$/g;
+console.log(emailRe.test(&quot;admin@163.com&quot;));
+console.log(emailRe.test(&quot;admin@163.commmmmmmmmmm&quot;));
+
+var usernameRe = /^[a-zA-Z][a-zA-Z0-9_]{5,14}/g;
+console.log(usernameRe.test(&quot;abc&quot;));
+console.log(usernameRe.test(&quot;$aaa&quot;));
+console.log(usernameRe.test(&quot;abcaaaaaaaa_aa&quot;));
+
+//p85 字符串替换
+console.clear();
+var str = &quot;Tish is 2an 3apple&quot;;
+console.log(str.replace(&quot;Tish&quot;, &quot;This&quot;)); //不会改变原数据
+console.log(str);
+
+console.log(str.replace(/\d+/g, &quot;&quot;)); //返回空字符串
+
+var html = `&lt;span&gt;hello&lt;/span&gt;&lt;div&gt; world&lt;/div&gt;`;
+console.log(html.replace(/&lt;[^&gt;]*([^&lt;&gt;]*)&lt;\/[^&gt;]*&gt;/g, &quot;$1&quot;));
+
+//p86 字符串隔离
+console.clear();
+var tags = &quot;heml, css, javascript&quot;;
+console.log(tags.split(&quot;,&quot;));
+
+var str = &quot;This | is , an  &amp; apple&quot;;
+console.log(str.split(/\W+/g));
+
+//p87 内置对象-number
+console.clear();
+//转换字符串为整数
+var strNum = &quot;15&quot;;
+var num = Number.parseInt(strNum);
+
+console.log(strNum);
+console.log(num);
+console.log(typeof num);
+
+var strNum = &quot;12.34&quot;;
+var num = parseFloat(strNum);
+console.log(num);
+console.log(typeof num);
+
+var strNum = &quot;abc&quot;;
+var num = parseInt(strNum);
+console.log(num);
+console.log(typeof num);
+console.log(isNaN(num));
+console.log(isNaN(123));
+
+var num = 12.33645;
+var numStr = num.toFixed(2); //保留两位小数
+console.log(numStr);
+console.log(typeof numStr);
+
+console.log(Number.MAX_SAFE_INTEGER); //最大数
+console.log(Number.POSITIVE_INFINITY); //正无限大
+console.log(Number.NEGATIVE_INFINITY); //负无限大
+
+//p88 Math
+console.clear();
+console.log(Math.PI); //π
+console.log(Math.abs(-6)); //绝对值
+console.log(Math.sin(Math.PI / 2)); //正弦
+console.log(Math.floor(3.98)); //向下取整
+console.log(Math.ceil(3.98)); //向上取整
+console.log(Math.pow(10, 3)); //10的3次方
+console.log(Math.trunc(2.645)); //返回整数，去掉小数点后的数
+console.log(Math.random()); //随机返回一个0到1之间的随机数
+
+//p89 Date 获取时间
+console.clear();
+var date = new Date();
+console.log(date);
+console.log(date.getFullYear()); //获取年份
+console.log(date.getMonth()); //获取月份，但这个月份是从0开始数的
+console.log(date.getDay()); //获取周几
+console.log(date.getDate()); //几号
+console.log(date.getHours()); //几时
+console.log(date.getMinutes()); //几分
+console.log(date.getSeconds()); //几秒
+console.log(date.getTime()); //1970年1月1日0点0分到现在过去u哦少毫秒
+console.log(date.toLocaleDateString()); //获取本地时间表示方法
+
+date.setFullYear(2022); //修改时间
+console.log(date.toLocaleDateString());
+
+date.setTime(1599210198629); //设置时间戳
+console.log(date.toLocaleDateString());
+
+//p90 内置对象-JSON对象介绍
+console.clear();
+var postJSON = `{
+  &quot;id&quot;:1,
+  &quot;title&quot;:&quot;标题&quot;,
+  &quot;comments&quot;:[
+    {
+      &quot;userId&quot;:1,
+      &quot;comment&quot;:&quot;评论1&quot;
+    },{
+      &quot;userId&quot;:2,
+      &quot;comment&quot;:&quot;评论2&quot;
+    }
+  ],
+  &quot;published&quot;:true,
+  &quot;author&quot;:null
+}`;
+
+console.log(JSON.parse(postJSON));
+
+var person = {
+  id: 1,
+  name: &quot;佑砢&quot;,
+  skills: [&quot;python&quot;, &quot;html5&quot;],
+};
+
+console.log(person);
+console.log(JSON.stringify(person, null, 2));
+
+var comments = `[
+  {
+    &quot;userId&quot;:1,
+    &quot;comment&quot;:&quot;评论1&quot;
+  },{
+    &quot;userId&quot;:2,
+    &quot;comment&quot;:&quot;评论2&quot;
+  }
+]`;
+
+console.log(JSON.parse(comments));
+
+//p91 set(没有重复元素的集合)
+console.clear();
+var set = new Set();
+set.add(1);
+set.add(3);
+set.add(5);
+
+console.log(set);
+
+set.add(3);
+console.log(set); //重复值不会被添加
+
+console.log(set.has(3)); //判断有无3
+console.log(set.has(4));
+
+//遍历
+set.forEach((value) =&gt; {
+  console.log(value);
+});
+
+set.delete(3); //删除3
+console.log(set);
+
+set.clear(); //清空
+console.log(set);
+
+//添加内存对象，内容相同的对象不算重复
+var obj1 = { id: 1 };
+var obj2 = { id: 1 };
+set.add(obj1);
+set.add(obj2);
+console.log(set);
+
+set.add(obj1); //名字相同的对象会被认为是重复，不会被再次添加
+console.log(set);
+
+//p92 Map
+console.clear();
+var map = new Map();
+map.set(1, &quot;值1&quot;);
+map.set({ key: 2 }, &quot;值2&quot;);
+map.set(&quot;key 3&quot;, &quot;值3&quot;);
+console.log(map);
+
+console.log(map.get(1)); //按key搜索值
+console.log(map.get(&quot;key 3&quot;));
+console.log(map.get({ key: 2 })); //这样是访问不到的，需要按下面的创建方法才能访问到
+
+var objKey = { key: 3 };
+map.set(objKey, &quot;值3&quot;);
+console.log(map.get(objKey));
+
+console.log(map.has(&quot;key 3&quot;)); //判断一个key是不是存在
+//遍历
+map.forEach((value, key) =&gt; {
+  console.log(key, value);
+});
+
+var iterator = map.entries();
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next()); //控制台done变成true表示迭代完了
+
+for (let [key, value] of map) {
+  console.log(key, value);
+}
+
+map.delete(1); //删除key为1的字段
+console.log(map);
+
+//p93 异常-捕获异常
+console.clear();
+try {
+  var emp = undefined;
+  console.log(emp.name);
+} catch (err) {
+  console.error(err); //也可以console.log(err),这里的err也可以自己定义，像是console.error(&quot;错误已处理&quot;)
+} finally {
+  console.log(&quot;总会执行&quot;); //不管有没有异常finally都会执行
+}
+
+//已经捕获的异常不会影响后续代码的执行
+console.log(&quot;这行会执行&quot;);
+
+//p94 throw 抛出异常
+console.clear();
+function fetchData() {
+  console.log(&quot;获取数据.......&quot;);
+  throw &quot;404&quot;;
+}
+
+try {
+  fetchData();
+} catch (e) {
+  if (e === &quot;404&quot;) {
+    console.error(&quot;未查询到数据&quot;);
+  }
+}
+
+//p95 error 对象
+console.clear();
+
+class ApiError extends Error {
+  constructor(url, ...params) {
+    super(...params);
+    this.url = url;
+    this.name = &quot;ApiError&quot;;
+  }
+}
+
+function fetchData() {
+  console.log(&quot;获取数据.......&quot;);
+  throw new ApiError(&quot;/post&quot;, &quot;404&quot;);
+}
+
+try {
+  fetchData();
+} catch (e) {
+  console.error(e);
+  console.error(e.name);
+  console.error(e.message);
+  console.error(e.url);
+}
+
+//p96 捕获多个异常
+console.clear();
+
+function fetchData() {
+  //console.log(a);
+  console.log(&quot;获取数据.......&quot;);
+  throw new ApiError(&quot;/post&quot;, &quot;404&quot;);
+}
+
+try {
+  fetchData();
+} catch (e) {
+  if (e instanceof ReferenceError) {
+    console.log(&quot;程序异常...&quot;);
+  } else if (e instanceof ApiError) {
+    console.log(&quot;API 异常&quot;);
+  }
+}
+console.clear();
+/*
+//p97 异步-setTimeout(把一个代码退后一步执行)
+console.clear();
+//js特点是同步执行，会按照正常定义办法一部异步执行，遇到需要花费时间的代码会持续等待，异步就是把这些花费时间长的代码放到另一个地方执行,剩下的代码还会继续执行
+
+console.log(&quot;第一行代码&quot;);
+
+setTimeout(() =&gt; {
+  console.log(&quot;1秒后执行&quot;);
+}, 1000); //1000毫秒等于1秒
+
+console.log(&quot;第二行代码&quot;);
+//会发现先打印了一二行代码再出现这个1秒后执行
+
+
+var timer1 = setTimeout(() =&gt; {
+  console.log(&quot;1秒后执行这个&quot;);
+}, 1000);
+
+setTimeout(() =&gt; {
+  clearTimeout(timer1);
+  console.log(&quot;中断了timer1的执行&quot;);
+});
+
+//p98 异步-setInterval
+console.clear();
+var interval = setInterval(() =&gt; {
+  let date = new Date();
+  console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+}, 1000);
+
+setTimeout(() =&gt; {
+  clearInterval(interval);
+  console.log(&quot;中断了interval&quot;);
+}, 5000);
+*/
+
+/*
+//p99 异步-创建 promise
+console.clear();
+var promise = new Promise((resolve) =&gt; {
+  setTimeout(() =&gt; {
+    resolve(&quot;执行成功&quot;);
+  }, 2000);
+});
+
+//p100 promise 完成回调
+promise.then((value) =&gt; console.log(value));
+console.log(&quot;在promise前前执行这个&quot;);
+
+//p101 promise 异常捕获
+
+var promise2 = new Promise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; {
+    reject(&quot;执行失败&quot;);
+  }, 2000);
+});
+
+primise2.catch((error) =&gt; console.log(error));
+console.log(&quot;在promise2前前执行这个&quot;);
+*/
+
+//p102 promise 链式调用
+/*
+new Promise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; {
+    resolve(1); //reject(promise1异常)
+  }, 1000);
+})
+  .then((value) =&gt; {
+    console.log(value); //throw&quot;then1异常&quot;
+    return value + 10;
+  })
+  .then((value) =&gt; {
+    console.log(value);
+    return new Promise((resolve) =&gt; resolve(value + 20));
+  })
+  .then((value) =&gt; {
+    console.log(value);
+  })
+  .catch((error) =&gt; {
+    console.log(error);
+  });
+
+  */
+
+/*
+//p103 多个promise同时执行
+console.clear();
+var p1 = new Promise((resolve) =&gt; {
+  setTimeout(() =&gt; {
+    resolve(1);
+  }, 1000);
+});
+
+var p2 = new Promise((resolve) =&gt; {
+  setTimeout(() =&gt; {
+    resolve(2);
+  }, 2000);
+});
+
+var p3 = new Promise((resolve) =&gt; {
+  setTimeout(() =&gt; {
+    resolve(3);
+  }, 500);
+});
+
+Promise.all([p1, p2, p3]).then((values) =&gt; console.log(values)); //这里输入的顺序决定执行的舒顺序而不是上面规定的时间
+*/
+
+/*
+//p104 异步-asyn&amp;await 用同步的代码模式来写异步的代码
+console.clear();
+async function async1() {
+  setTimeout(() =&gt; {
+    console.log(&quot;async 执行完毕&quot;);
+  }, 1000);
+}
+
+async1();
+console.log(async1());
+
+
+
+//await
+
+async function async2() {
+  let result2 = await async3();
+  let result3 = await async4();
+  try {
+    let result4 = await async5();
+  } catch (e) {
+    console.log(e);
+  }
+  console.log(result2);
+  console.log(result3); //这里的顺序代表执行顺序
+}
+
+async function async3() {
+  return new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; {
+      resolve(10);
+    }, 1000);
+  });
+}
+
+async function async4() {
+  return new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; {
+      resolve(8);
+    }, 500);
+  });
+}
+//弹出错误
+async function async5() {
+  return new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+      reject(&quot;执行出错&quot;);
+    }, 500);
+  });
+}
+
+async2();
+
+*/
+</code></pre>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -375,16 +1024,16 @@
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
+          <a href="https://nekochram.github.io" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/nekochram/nekochram.github.io/images/index.jpg" itemprop="image" alt="佑砢君" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="" itemprop="url" rel="author"></a>
+            <a href="https://nekochram.github.io" itemprop="url" rel="author">佑砢君</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i></p>
+        <p><i class="iconfont icon-write"></i>只有学到更多才能更加强大！</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->
